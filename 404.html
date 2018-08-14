@@ -1,51 +1,106 @@
 <!DOCTYPE html>
-<head>
-    <title>CLIPCO - Error Page Not Found</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="http://www.cusdclipco.org/css.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        /* some css can go here */
-    </style>
-</head>
-<body id="myPage" class="bg-grey" onload="loadImage(0)">
-<div id="navbar-placeholder"></div>
-<script>
-    $(function () {
-        $("#navbar-placeholder").load("http://www.cusdclipco.org/subpage_navbar.html");
-    });
-</script>
+<html lang="en">
+    <head>
+        <title>CLIPCO - Error Page Not Found</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://www.cusdclipco.org/css.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body id="myPage" class="bg-grey" onload="loadImage(0)">
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.cusdclipco.org">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://cusdclipco.blogspot.com">NEWS</a>
+                        </li>
 
-<div class="jumbotron text-center bg-white">
-    <h1>Error: 404</h1>
-    <p>Page Not Found</p>
-</div>
+                        <li class="dropdown">
+                            <a href="#about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ABOUT<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.cusdclipco.org/about.html">About Us</a></li>
+                                <li><a href="http://www.cusdclipco.org/clip.html">About CLIP</a></li>
+                                <li><a href="http://www.cusdclipco.org/faq.html">FAQ</a></li>
+                                <li><a href="http://www.cusdclipco.org/enroll">Registration Info</a></li>
+                            </ul>
+                        </li>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-8 col-xs-12">
-            <h2>Sorry, the page you requested could not be found.</h2>
-            <h4>Make sure you typed in the URL correctly. Click <a href="http://www.cusdclipco.org">here</a> to return to the homepage, or use the navigation links above to go to any other page on the site.
-            <br>
-            <br>
-            If you have any questions you can contact our web team below:</h4>
-            <a href="http://www.cusdclipco.org/email.php?board=web"><button class="btn btn-default btn-lg" id="clickMe">Contact Web Team</button></a>
+                        <li class="dropdown">
+                            <a href="#programs" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PROGRAMS<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.cusdclipco.org/ASEP.html">ASEP</a></li>
+                                <li><a href="http://www.cusdclipco.org/CNYP.html">CNY Parade</a></li>
+                                <li><a href="http://www.cusdclipco.org/CLIP%20Art.html">Clip Art</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#budget" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BUDGET<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.cusdclipco.org/budget.html">Budget</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#donate" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DONATE<span class="caret"></span></a>
+                            <ul class="dropdown-menu color" role="menu">
+                                <li><a href="http://www.cusdclipco.org/direct_give.html">Direct Give Competition</a></li>
+                                <li><a href="http://www.cusdclipco.org/donations.html">Donations</a></li>
+                                <li><a href="http://www.cusdclipco.org/donateFAQ.html">Donations FAQ</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="http://www.cusdclipco.org/contact.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CONTACT<span class="caret"></span></a>
+                            <ul class="dropdown-menu color" role="menu">
+                                <li><a href="http://www.cusdclipco.org/contact.html">Contact Us</a></li>
+                                <li><a href="http://www.cusdclipco.org/reimbursement.html">Reimbursement Form</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center bg-white">
+            <h1>Error: 404</h1>
+            <p>Page Not Found</p>
         </div>
-        <div class="col-sm-4 col-xs-12" id="stock-image">
-            <!-- scripty mcscriptface will fill this in-->
-             <script src="http://cusdclipco.org/imageLoading.js" id="image-loading-script"></script>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <h2>Sorry, the page you requested could not be found.</h2>
+                    <h4>Make sure you typed in the URL correctly. Click <a href="https://www.cusdclipco.org">here</a> to return to the homepage, or use the navigation links above to go to any other page on the site.
+                        <br>
+                        <br>
+                        If you have any questions you can contact our web team below:</h4>
+                    <a href="https://www.cusdclipco.org/email.php?board=web" class="btn btn-default btn-lg">Contact Web Team</a>
+                </div>
+                <div class="col-sm-4 col-xs-12" id="stock-image">
+                    <!-- scripty mcscriptface will fill this in-->
+                    <script src="https://cusdclipco.org/imageLoading.js" id="image-loading-script"></script>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<footer class="container-fluid text-center">
-    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-</footer>
-<script src="http://www.cusdclipco.org/js.js"></script>
-</body>
+        <footer class="container-fluid text-center">
+            <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script src="https://www.cusdclipco.org/js.js"></script>
+    </body>
 </html>
