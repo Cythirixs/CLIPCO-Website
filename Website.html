@@ -7,8 +7,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css.css">
-        <link rel="icon" type="image" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css.css"/>
+        <link rel="stylesheet" type="text/css" href="homepage.css"/>
+        <link rel="stylesheet" type="text/css" href="icons.css"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
@@ -30,11 +32,6 @@
                 align-content: center;
             }
 
-            #clipcobudgetgif{
-                width: 50%;
-                max-width: 498px;
-                max-height: 280px;
-            }
 
             #newsCarousel{
                 width: 100%;
@@ -54,35 +51,8 @@
                 margin-top: 2px;
             }
 
-            .dropdown-menu{
-                display: none;
-            }
-
-            .dropdown:hover .dropdown-menu{
-                background-color: white;
-                color: red;
-                display: block;
-            }
-
             .carousel-indicators li {
                 border-color: red;
-            }
-
-            .carousel-indicators li.active {
-                background-color: red;
-            }
-
-
-            a.right.carousel-control, a.left.carousel-control{
-                padding: 0px !important; 
-            }
-
-            .item h4 {
-                font-size: 19px;
-                line-height: 1.375em;
-                font-weight: 400;
-                font-style: italic;
-                margin: 70px 0;
             }
 
             .carousel-caption{
@@ -97,78 +67,8 @@
                 line-height: 1em;
                 font-size: 2em;
                 color: #111;
-                /*text-shadow:
-                -1px -1px 0 #fff,  
-                1px -1px 0 #fff,
-                -1px 1px 0 #fff,
-                1px 1px 0 #fff;*/
+                text-transform: none;
             }
-
-            /*@media screen and (max-width: 540px) {
-            .carousel-caption {
-            left: -0%;
-            bottom: 0%;
-            width: 100%;
-            background-color: rgba(255,255,255,0.5);
-            align-content: center;
-            }
-
-            .blog-title {
-            line-height: 0.5em;
-            font-size: 1em;
-            margin: 0px;
-            }
-            }*/
-
-            footer{
-                padding: 20px;
-            }
-
-            .col-sm-12 img{
-                width:80vw;
-            }
-
-            #news{
-                position: relative;
-            }
-
-            @media screen and (min-width:960px) and (max-width:1200px){
-                #clipcobudgetgif{
-                    width:50%;
-                }
-
-            }
-            @media screen and (min-width:1200px) and (max-width:1500px){
-                #clipcobudgetgif{
-                    width:45%;
-                }
-            }
-
-            @media screen and (min-width:800px) and (max-width:1366px){
-                #news h3{
-                    line-height: 1em;
-                    font-size: 1em;
-                    margin: 2px 0px;
-                }
-            }
-
-            @media screen and (max-width:800px){
-                #news h3{
-                    line-height: 1em;
-                    font-size: 1em;
-                    margin: 2px 0px;
-                }
-            }
-
-            @media screen and (min-width:1366px){
-                #news h3{
-                    line-height: 1.5em;
-                    font-size: 2em;
-                    margin: 25px 0px;
-                }
-            }
-
-
 
             .slideanim {
                 visibility: hidden;
@@ -283,7 +183,7 @@
                         
         </style>
     </head>
-
+    
     <body id="top" data-spy="scroll" data-target=".navbar" data-offset="60">
         <!-- navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -365,7 +265,7 @@
         <div id="screen-size-alert">
             <h2>Your Screen is too narrow.</h2>
             <p>Our website may look better if you turn your device on its side.</p>
-            <button class="btn btn-default btn-lg" role="button" onclick="size_alert_dismiss_func();">Dismiss</button>
+            <button class="btn btn-default btn-lg" type="button" onclick="size_alert_dismiss_func();">Dismiss</button>
         </div>
 
         <!-- news container -->
