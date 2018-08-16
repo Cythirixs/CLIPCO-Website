@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="http://cusdclipco.org/css.css">
+    <link rel="stylesheet" type="text/css" href="/../css.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script> 
@@ -29,7 +29,7 @@
     <div id="navbar-placeholder"></div>
     <script>
         $(function () {
-            $("#navbar-placeholder").load("http://cusdclipco.org/subpage_navbar.html");
+            $("#navbar-placeholder").load("/../subpage_navbar.html");
         });
     </script>
 
@@ -76,7 +76,7 @@
                 $inputVerified = false;
             }
 
-            $hash = '$2y$10$1Vlz7FfbY1J/cEM.39GtpOoFGvDcKS8/0cC2VyagFLrppTC8cDGB2';
+            $hash = file_get_contents(__DIR__ . "/../../php/hash.txt");
             if(!password_verify($password_entered,$hash)){
                 $password_incorrect = "Password is incorrect";
                 $inputVerified = false;
@@ -97,7 +97,7 @@
                 $fileType = $_FILES['fileToUpload']['type'];
                 $name = $_FILES['fileToUpload']['name'];
                 $maxSize = 2000000;
-                $file = "/home/cusdzern/public_html/documents/clipco meeting $type/$date.pdf";
+                $file = __DIR__ . "/../documents/clipco meeting $type/$date.pdf";
                 $extension = strtolower(substr($name, strpos($name, ".") + 1));
 
 
@@ -165,7 +165,7 @@
                                 Please select a file to upload.
                             </td>
                             <td>
-                                <?php if(!empty($imageErr)){echo "<span class=\"error\">" . $imageErr . "</span>";} ?>
+                                <?php if(!empty($imageErr)){echo "<span class=\"error\">$imageErr</span>";} ?>
                                 <input type="file" name="fileToUpload" id="fileToUpload"><br>
                             </td>
                         </tr>
@@ -192,7 +192,7 @@
                 </form>
             </div>
             <div class="col-sm-4 col-xs-12" id="stock-image">
-                <img src="http://www.cusdclipco.org/images/placeholder1.jpg" class="subpage_image">
+                <img src="/../images/placeholder1.jpg" class="subpage_image">
             </div>
         </div>
     </div>

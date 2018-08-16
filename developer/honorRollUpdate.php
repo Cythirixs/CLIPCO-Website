@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="http://cusdclipco.org/css.css">
+    <link rel="stylesheet" type="text/css" href="https://www.cusdclipco.org/css.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
-        $("#navbar-placeholder").load("http://cusdclipco.org/subpage_navbar.html");
+        $("#navbar-placeholder").load("http://www.cusdclipco.org/subpage_navbar.html");
     });
 </script>
 
@@ -68,7 +68,7 @@
                     $password_entered = test_input($_POST["psw"]);
                 }
 
-                $hash = '$2y$10$4ELKJAacHM8ysAOCJQRN0eCOeMNkrsF/qrlTJqqUohD73ZqVxBrqG';
+                $hash = file_get_contents(__DIR__ . "/../../php/hash.txt");
                 if(!password_verify($password_entered,$hash)){
                     $password_incorrect = "Password is incorrect";
                     $verified = false;
@@ -77,7 +77,7 @@
                 }
                 if($verified && $Phase2){
                     $Phase2 = false;
-                    $fileName = "/home/cusdzern/public_html/documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
+                    $fileName = __DIR__ . "/../documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
                     $fileToWrite = fopen($fileName, "w") or die ("Unable to open file!");
                     fwrite($fileToWrite,$names);
                     fclose($fileToWrite);
@@ -113,7 +113,7 @@
                     //do nothing
                 }
                 if(!empty($grade) && !empty($level)){
-                    $fileName = "/home/cusdzern/public_html/documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
+                    $fileName = __DIR__ . "/../documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
                     $fileToRead = fopen($fileName, "r");
                     while(!feof($fileToRead)){
                         $names = $names . fgets($fileToRead);

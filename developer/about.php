@@ -6,7 +6,7 @@
 
         public function run(){
             //read the list of files in the folder
-            $meetingPaths = scandir("/home/cusdzern/public_html/documents/clipco meeting agendas/");
+            $meetingPaths = scandir(__DIR__ . "/../documents/clipco meeting agendas/");
             $meetings = array();
             $count = count($meetingPaths);
             for($i = 0; $i < count($meetingPaths); $i++){
@@ -19,7 +19,8 @@
                 }
                 
                 $minutes = false;
-                if (fopen("/home/cusdzern/public_html/documents/clipco meeting minutes/".$meetingPaths[$i],"r")) {
+
+                if (file_exists(__DIR__ . "/../documents/clipco meeting minutes/".$meetingPaths[$i])) {
                     $minutes = true;
                 }
 
@@ -64,7 +65,8 @@
                 $htmlBody = $htmlBody . "   </div>\n";
                 $htmlBody = $htmlBody . "</div>\n";
             }
-            $file = fopen("/home/cusdzern/public_html/meeting_minutes_agendas.html", "w");
+
+            $file = fopen(__DIR__ . "/../meeting_minutes_agendas.html", "w");
             fwrite($file, $htmlBody);
             fclose($file);
         }
