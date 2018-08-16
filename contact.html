@@ -76,6 +76,27 @@
                         $([document.documentElement, document.body]).animate({
                             scrollTop: $("#board-button").offset().top
                         }, 900); //millis for scroll time
+                    } else if(param == 'volunteer'){
+                        //show the board
+                        $('#volunteer-button').click();
+                        //scroll to the list
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#volunteer-button").offset().top
+                        }, 900); //millis for scroll time
+                    } else if(param == 'programs'){
+                        //show the board
+                        $('#programs-button').click();
+                        //scroll to the list
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#programs-button").offset().top
+                        }, 900); //millis for scroll time
+                    } else if(param == 'schools') {
+                        //show the board
+                        $('#schools-button').click();
+                        //scroll to the list
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#schools-button").offset().top
+                        }, 900); //millis for scroll time
                     }
                 } catch (err) {
                     //that's ok
@@ -105,25 +126,25 @@
                         <div id="volunteer-row" class="row">
                             <h2>Volunteer</h2>
                             <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you&#39;ll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program. Please fill the form below to volunteer for some of our exciting events and committees.</h4>
-                            <button class="btn btn-default btn-lg" data-target="#demo" data-toggle="collapse" id="form-button" type="button">Volunteer Form</button>
+                            <a href="#?show=volunteer" id="volunteer-button" class="btn btn-default btn-lg" data-target="#demo" data-toggle="collapse" role="button">Volunteer Form</a>
                             <div class="collapse" id="demo"><br />
                                 <iframe id="volunteer-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true"></iframe>
                             </div>
                             <h2>Contacts</h2>
                             <p>For general inquiries, you may contact us at <a href="/email.php?board=clipco">clipco@cusdclipco.org</a>.  For donation-related questions, please contact <a href="/email.php?board=donate">donate@cusdclipco.org.</a></p>
-                            <div><button class="btn btn-default btn-lg" data-target="#contacts" data-toggle="collapse" id="board-button" type="button">Board of Directors</button></div>
+                            <div><a href="#?show=board" id="board-button" class="btn btn-default btn-lg" data-target="#contacts" data-toggle="collapse" role="button">Board of Directors</a></div>
                             <div class="collapse" id="contacts">
                                 <p>There are still open positions available. Please contact us to join our team!</p>
                                 <div id="board-directors"></div>
                             </div>
                             <br>
-                            <div id="programs-button"><button class="btn btn-default btn-lg" data-target="#morecontacts" data-toggle="collapse" type="button">Program Directors</button></div>
+                            <div><a href="#?show=programs" id="programs-button" class="btn btn-default btn-lg" data-target="#morecontacts" data-toggle="collapse" role="button">Program Directors</a></div>
                             <div class="collapse" id="morecontacts">
                                 <p>There are still open positions available. Please contact us to join our team!</p>
                                 <div id="program-directors"></div>
                             </div>
                             <br>
-                            <div><button class="btn btn-default btn-lg" data-target="#schools" data-toggle="collapse" type="button">CLIPCO Schools and Facebook Page</button></div>
+                            <div><a href="#?show=schools" id="schools-button" class="btn btn-default btn-lg" data-target="#schools" data-toggle="collapse" role="button">CLIPCO Schools and Facebook Page</a></div>
                             <div class="collapse" id="schools">
                                 <a href="http://www.cusdk8.org/meyerholz">Meyerholz Elementary School</a><br>
                                 <a href="https://www.cusdk8.org/miller">Miller Middle School</a><br>
