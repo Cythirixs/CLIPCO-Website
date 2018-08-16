@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css.css"/>
-        <link rel="stylesheet" type="text/css" href="homepage.css"/>
-        <link rel="stylesheet" type="text/css" href="icons.css"/>
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <link rel="stylesheet" type="text/css" href="icons.css">
+        <link rel="stylesheet" type="text/css" href="homepage.css">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,9 +21,15 @@
                 display: block;
                 width:80%;
                 height:90%;
-                max-height: 90vh;
+                
             }
-
+            
+            @media screen and (min-width:1364px) {
+                #news {
+                    padding: 0px 200px;
+                }
+            }
+            
             .item{
                 margin-top: 5px;
                 overflow: hidden;
@@ -32,6 +38,11 @@
                 align-content: center;
             }
 
+            #clipcobudgetgif{
+                width: 50%;
+                max-width: 498px;
+                max-height: 280px;
+            }
 
             #newsCarousel{
                 width: 100%;
@@ -51,8 +62,35 @@
                 margin-top: 2px;
             }
 
+            .dropdown-menu{
+                display: none;
+            }
+
+            .dropdown:hover .dropdown-menu{
+                background-color: white;
+                color: red;
+                display: block;
+            }
+
             .carousel-indicators li {
                 border-color: red;
+            }
+
+            .carousel-indicators li.active {
+                background-color: red;
+            }
+
+
+            a.right.carousel-control, a.left.carousel-control{
+                padding: 0px !important;
+            }
+
+            .item h4 {
+                font-size: 19px;
+                line-height: 1.375em;
+                font-weight: 400;
+                font-style: italic;
+                margin: 70px 0;
             }
 
             .carousel-caption{
@@ -70,39 +108,51 @@
                 text-transform: none;
             }
 
-            .slideanim {
-                visibility: hidden;
+            footer{
+                padding: 20px;
             }
 
-            .slide {
-                animation-name: slide;
-                -webkit-animation-name: slide;
-                animation-duration: 1s;
-                -webkit-animation-duration: 1s;
-                visibility: visible;
+            .col-sm-12 img{
+                width:80vw;
             }
 
-            @keyframes slide {
-                0% {
-                    opacity: 0;
-                    transform: translateY(70%);
+            #news{
+                position: relative;
+            }
+
+            @media screen and (min-width:960px) and (max-width:1200px){
+                #clipcobudgetgif{
+                    width:50%;
                 }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0%);
-                    transform: rotate(0deg);
+
+            }
+            @media screen and (min-width:1200px) and (max-width:1500px){
+                #clipcobudgetgif{
+                    width:45%;
                 }
             }
 
-            @-webkit-keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
+            @media screen and (min-width:800px) and (max-width:1366px){
+                #news h3{
+                    line-height: 1em;
+                    font-size: 1em;
+                    margin: 2px 0px;
                 }
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                    -webkit-transform: rotate(0deg);
+            }
+
+            @media screen and (max-width:800px){
+                #news h3{
+                    line-height: 1em;
+                    font-size: 1em;
+                    margin: 2px 0px;
+                }
+            }
+
+            @media screen and (min-width:1366px){
+                #news h3{
+                    line-height: 1.5em;
+                    font-size: 2em;
+                    margin: 25px 0px;
                 }
             }
 
@@ -139,6 +189,7 @@
                 opacity: 1;
                 width:300px;
                 height:200px;
+                visibility: hidden;
             }
 
             #screen-size-alert.dismissed {
@@ -154,16 +205,16 @@
                 text-transform: none;
                 color:rgb(17, 89, 221);
             }
-            
+
             #about-video-iframe{
                 width: 40vw;
                 height: 22.5vw; /* 22.5 = 40*(9/16) */
                 max-width: 1280px;
                 max-height: 720px;
-                border: 1px solid black;
-                border-radius: 1px;
+                border: 2px solid black;
+                border-radius: 2px;
             }
-            
+
             @media screen and (max-width: 767px){
                 #about-video-iframe{
                     width: 80vw;
@@ -174,17 +225,16 @@
                     border-radius: 2px;
                 }
             }
-            
+
             a h3 {
                 color: inherit;
                 margin: 2px 0px;
-                
+
             }
-                        
         </style>
     </head>
-    
-    <body id="top" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <body id="top" data-spy="scroll" data-target=".navbar" data-offset="60" >
         <!-- navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -261,7 +311,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- blog loading script-->
         <div id="screen-size-alert">
             <h2>Your Screen is too narrow.</h2>
             <p>Our website may look better if you turn your device on its side.</p>
@@ -270,13 +320,14 @@
 
         <!-- news container -->
         <div id="news" class="container-fluid text-center bg-grey ">
-            <div class="row">
+            <div class="row slide">
                 <div class="col-sm-9 col-xs-12">
-                    <h2> On The Blog </h2>
+                    <h2>On The Blog</h2>
                     <div id="newsCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
                             <!-- the script will fill this in-->
+                            <div class="item text-center bg-grey active" id="news-carousel-item-0"><img src="https://www.cusdclipco.org/images/blog/conniechanfamily.jpg" class="subpage_image" alt="conniechanfamily.jpg" id="news-carousel-image-0"><div class="carousel-caption d-none d-md-block"><h2 class="blog-title"><a href="http://cusdclipco.blogspot.com/2018/08/teacher-spotlight-connie-chan.html">Teacher Spotlight - Connie Chan</a></h2></div></div><div class="item text-center bg-grey" id="news-carousel-item-1"><img src="https://www.cusdclipco.org/images/blog/clipgrad2018.JPG" class="subpage_image" alt="clipgrad2018.JPG" id="news-carousel-image-1"><div class="carousel-caption d-none d-md-block"><h2 class="blog-title"><a href="http://cusdclipco.blogspot.com/2018/06/congrats-to-clip-graduating-class-of.html">Congrats to the CLIP Graduating Class of 2018!</a></h2></div></div><div class="item text-center bg-grey" id="news-carousel-item-2"><img src="https://www.cusdclipco.org/images/blog/DIMiller.JPG" class="subpage_image" alt="DIMiller.JPG" id="news-carousel-image-2"><div class="carousel-caption d-none d-md-block"><h2 class="blog-title"><a href="http://cusdclipco.blogspot.com/2018/05/clip-destination-imagination-teams.html">CLIP Destination Imagination Teams Place in Top Ten Globals</a></h2></div></div><div class="item text-center bg-grey" id="news-carousel-item-3"><img src="https://www.cusdclipco.org/images/blog/zoeylim1.jpeg" class="subpage_image" alt="zoeylim1.jpeg" id="news-carousel-image-3"><div class="carousel-caption d-none d-md-block"><h2 class="blog-title"><a href="http://cusdclipco.blogspot.com/2018/05/clip-student-winner-at-santa-clara.html">CLIP Student Winner at Santa Clara Artspiration Showcase</a></h2></div></div><div class="item text-center bg-grey" id="news-carousel-item-4"><img src="https://www.cusdclipco.org/images/blog/AlanFong.jpg" class="subpage_image" alt="AlanFong.jpg" id="news-carousel-image-4"><div class="carousel-caption d-none d-md-block"><h2 class="blog-title"><a href="http://cusdclipco.blogspot.com/2018/04/volunteer-spotlight-alan-fong.html">Volunteer Spotlight - Alan Fong</a></h2></div></div>
                         </div>
                         <!-- Indicators -->
                         <ol class="carousel-indicators" id="news-carousel-list">
@@ -299,11 +350,11 @@
                 <div id="news-carousel-sidebar-div" class="col-sm-3 col-xs-12">
                     <h2>Recent Stories:</h2>
                     <ul id="news-carousel-sidebar">
-                        <!--script will fill this in-->
+                        <li><a href="http://cusdclipco.blogspot.com/2018/08/teacher-spotlight-connie-chan.html"><h3>Teacher Spotlight - Connie Chan</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/06/congrats-to-clip-graduating-class-of.html"><h3>Congrats to the CLIP Graduating Class of 2018!</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-destination-imagination-teams.html"><h3>CLIP Destination Imagination Teams Place in Top Ten Globals</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-student-winner-at-santa-clara.html"><h3>CLIP Student Winner at Santa Clara Artspiration Showcase</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/04/volunteer-spotlight-alan-fong.html"><h3>Volunteer Spotlight - Alan Fong</h3></a></li>                        <li><a href="https://cusdclipco.blogspot.com"><h3>More Stories...</h3></a></li>
                     </ul>
 
                 </div>
-            </div>     
+            </div>
         </div>
         <footer class="container-fluid text-center">
             <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
@@ -323,9 +374,9 @@
                     <br>
                     <a href="contact.html" class="btn btn-default btn-lg" role="button">Contact Us</a>
                 </div>
-                
+
             </div>
-            
+
         </div>
 
         <footer class="container-fluid text-center">
@@ -367,7 +418,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="text-center">
-                        <a href="current-budget"><h4>Approved 2017 - 2018 CLIP Curriculum Budget</h4></a>
+                        <a href="documents/17-18budget.pdf"><h4>Approved 2017 - 2018 CLIP Curriculum Budget</h4></a>
                         <p><img src="images/clipcobudget.gif" alt="Budget" id="clipcobudgetgif"></p>
                     </div>
                 </div>
@@ -452,7 +503,7 @@
                 loadHeader();
                 sizeAlert();
 
-            });  
+            });
 
             $(document).ready(function(){
                 loadHeader();
@@ -478,11 +529,11 @@
                     document.getElementById("gb-header-right").innerHTML = "<div id=\"gb-global-icons\"><a class=\"global-icon\" id=\"icon-set-1-icon-number0\" href=\"contact.html\" target=\"_self\"><span class=\"icon site-utility cs-icon-site-utility-4\"></span><span class=\"text\" style=\"height: 28px;\">Contacts</span></a><a class=\"global-icon\" id=\"icon-set-1-icon-number1\" href=\"Calendar.html\" target=\"_self\"><span class=\"icon site-utility cs-icon-site-utility-1\"></span><span class=\"text\" style=\"height: 28px;\">Calendar</span></a><a class=\"global-icon\" id=\"icon-set-1-icon-number2\" href=\"https://cusdclipco.blogspot.com/\" target=\"_self\"><span class=\"icon site-utility cs-icon-site-utility-10\"></span><span class=\"text\" style=\"height: 28px;\">Blog/News</span></a><a class=\"global-icon\" id=\"icon-set-1-icon-number3\" href=\"https://shop.spreadshirt.com/clip/\" target=\"_self\"><span class=\"icon student-program cs-icon-student-program-11\"></span><span class=\"text\" style=\"height: 28px;\">T-Shirts</span></a><a class=\"global-icon\" id=\"icon-set-1-icon-number4\" href=\"Social_Media.html\" target=\"_self\"><span class=\"icon people cs-icon-people-12\"></span><span class=\"text\" style=\"height: 28px;\">Social Media</span></a><a class=\"global-icon\" id=\"icon-set-1-icon-number5\" href=\"faq.html\" target=\"_blank\"><span class=\"icon communication cs-icon-communication-12\"></span><span class=\"text\" style=\"height: 28px;\">FAQ</span></a></div>";
                     document.getElementById("gb-header-right").setAttribute("class","ui-clear hide768 col-xs-12 col-sm-8");
 
-                } 
+                }
             }
             function sizeAlert(){
                 if($(window).width() <= 375 && !size_alert_dismiss){
-                    //do nothing
+                    document.getElementById("screen-size-alert").style.visibility = "visible";
                 } else {
                     if(document.getElementById("screen-size-alert")){
                         document.getElementById("screen-size-alert").parentNode.removeChild(document.getElementById("screen-size-alert"));
@@ -499,31 +550,6 @@
         </script>
 
         <!-- scroll script -->
-        <script src="js.js"></script>
-
-        <!-- blog loading script-->
-        <script>
-            function handleResponse(response) {
-                for(i = 0; i < response.items.length && i < 5; i++){
-                    //sidebar list
-                    document.getElementById("news-carousel-sidebar").innerHTML += "<li><a href=\""+ response.items[i].url + "\"><h3>" + response.items[i].title + "</h3></a></li>";
-
-                    //now update the actual content
-                    var imgsrc = response.items[i].content.split("src=\"")[1].split("\"")[0];
-                    document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item text-center bg-grey\" id=\"news-carousel-item-" + i + "\">" + "<img src=\"" + imgsrc + "\" class=\"subpage_image\"><div class=\"carousel-caption d-none d-md-block\"><h2 class=\"blog-title\"><a href=\""+ response.items[i].url + "\">" + response.items[i].title + "</a></h2></div></div>";
-
-                }
-                document.getElementById("news-carousel-item-0").setAttribute("class","item active text-center bg-grey")
-                //sidebar list - more stories link
-                document.getElementById("news-carousel-sidebar").innerHTML += "<li><a href=\"https://cusdclipco.blogspot.com\"><h3>More Stories...</h3></a></li>";
-            }
-        </script>
-
-        <div id="blog-script"></div>
-        <script>
-            $(function(){
-                $("#blog-script").load("blog_script.html");
-            });
-        </script>     
+        <script async src="js.js"></script>
     </body>
 </html>
