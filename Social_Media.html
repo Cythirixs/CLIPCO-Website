@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css">
+    <style>
 
         @media screen and (min-width: 768px){
             .video-iframe {
@@ -67,7 +67,7 @@ by CUSDCLIPCO</a>
             </div>
 
             <!-- Youtube video loading script -->
-            <script type="text/javascript">
+            <script>
                 var xmlhttp = new XMLHttpRequest();
                 var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA&channelId=UCyYfMrp0h5PlVz8inZs9aHQ&part=snippet,id&order=date&maxResults=20";
                 xmlhttp.open("GET", url, true);
@@ -81,13 +81,18 @@ by CUSDCLIPCO</a>
                 };
 
                 function handleResponse(response) {
-                    //console.log(response['kind']);
-                    //console.log("length of response[\'items\'] is: " + response['items'].length);
+                    var newest = true;
                     for(var i = 0; i < response['items'].length - 1 ; i++){
+                        if(response['items'][i]['snippet']['title'] == "Welcome to CLIPCO"){
+                            if(newest) {
+                                newest = false;
+                            } else {
+                                continue;
+                            }
+                        }
                         var iframe = document.createElement("IFRAME");
                         iframe.setAttribute("class","video-iframe");
                         var src = "https://www.youtube.com/embed/" + response['items'][i]['id']['videoId'];
-                        //console.log("src=\"" + src + "\"");
                         iframe.setAttribute("src",src);
                         iframe.setAttribute("frameborder","0");
                         iframe.appendChild(document.createTextNode("Loading..."));
