@@ -21,15 +21,9 @@
                 display: block;
                 width:80%;
                 height:90%;
-                
+
             }
-            
-            @media screen and (min-width:1364px) {
-                #news {
-                    padding: 0px 200px;
-                }
-            }
-            
+
             .item{
                 margin-top: 5px;
                 overflow: hidden;
@@ -207,20 +201,12 @@
             }
 
             #about-video-iframe{
-                width: 40vw;
-                height: 22.5vw; /* 22.5 = 40*(9/16) */
-                max-width: 1280px;
-                max-height: 720px;
                 border: 2px solid black;
                 border-radius: 2px;
             }
 
             @media screen and (max-width: 767px){
                 #about-video-iframe{
-                    width: 80vw;
-                    height: 45vw; /* 45 = 80*(9/16) */
-                    max-width: 1280px;
-                    max-height: 720px;
                     border: 2px solid black;
                     border-radius: 2px;
                 }
@@ -229,8 +215,31 @@
             a h3 {
                 color: inherit;
                 margin: 2px 0px;
-
             }
+
+            #about-iframe-wrapper .ratio {
+                display:block;
+                width:100%;
+                height:auto;
+                opacity: 0;
+            }
+
+            #about-iframe-wrapper iframe {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+            }
+            
+            #about-video-wrapper {
+                width:80%;height:100%;margin:0 auto;
+            } 
+            
+            #about-iframe-wrapper {
+                position:relative;
+            }
+            
         </style>
     </head>
 
@@ -317,12 +326,11 @@
             <p>Our website may look better if you turn your device on its side.</p>
             <button class="btn btn-default btn-lg" type="button" onclick="size_alert_dismiss_func();">Dismiss</button>
         </div>
-
         <!-- news container -->
         <div id="news" class="container-fluid text-center bg-grey ">
             <div class="row slide">
                 <div class="col-sm-9 col-xs-12">
-                    <h2>On The Blog</h2>
+                    <h2 class="text-center">On The Blog</h2>
                     <div id="newsCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
@@ -350,22 +358,21 @@
                 <div id="news-carousel-sidebar-div" class="col-sm-3 col-xs-12">
                     <h2>Recent Stories:</h2>
                     <ul id="news-carousel-sidebar">
-                        <li><a href="http://cusdclipco.blogspot.com/2018/08/teacher-spotlight-connie-chan.html"><h3>Teacher Spotlight - Connie Chan</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/06/congrats-to-clip-graduating-class-of.html"><h3>Congrats to the CLIP Graduating Class of 2018!</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-destination-imagination-teams.html"><h3>CLIP Destination Imagination Teams Place in Top Ten Globals</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-student-winner-at-santa-clara.html"><h3>CLIP Student Winner at Santa Clara Artspiration Showcase</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/04/volunteer-spotlight-alan-fong.html"><h3>Volunteer Spotlight - Alan Fong</h3></a></li>                        <li><a href="https://cusdclipco.blogspot.com"><h3>More Stories...</h3></a></li>
+                        <li><a href="http://cusdclipco.blogspot.com/2018/08/teacher-spotlight-connie-chan.html"><h3>Teacher Spotlight - Connie Chan</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/06/congrats-to-clip-graduating-class-of.html"><h3>Congrats to the CLIP Graduating Class of 2018!</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-destination-imagination-teams.html"><h3>CLIP Destination Imagination Teams Place in Top Ten Globals</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/05/clip-student-winner-at-santa-clara.html"><h3>CLIP Student Winner at Santa Clara Artspiration Showcase</h3></a></li><li><a href="http://cusdclipco.blogspot.com/2018/04/volunteer-spotlight-alan-fong.html"><h3>Volunteer Spotlight - Alan Fong</h3></a></li><li><a href="https://cusdclipco.blogspot.com"><h3>More Stories...</h3></a></li>
                     </ul>
 
                 </div>
             </div>
+            <footer class="container-fluid text-center">
+                <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </footer>
         </div>
-        <footer class="container-fluid text-center">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </footer>
         <!-- about container -->
         <div id="about" class="container-fluid">
-            <div class="text-center">
-                <h2><a href="about.html">about CLIPCO</a></h2><br>
-            </div>
-            <div class="row">
-                <div class="text-center col-sm-6 col-xs-12">
+            <h2><a href="about.html">about CLIPCO</a></h2>
+            <div class="row" id="about-video-wrapper">
+                <div class="col-sm-6 col-xs-12" id="about-iframe-wrapper">
+                    <img class="ratio" src="http://placehold.it/16x9"/>
                     <iframe id="about-video-iframe" src="https://www.youtube.com/embed/Hwq_g5BZshA" allowfullscreen></iframe>
                 </div>
                 <div class="col-sm-6 col-xs-12">
@@ -374,11 +381,8 @@
                     <br>
                     <a href="contact.html" class="btn btn-default btn-lg" role="button">Contact Us</a>
                 </div>
-
             </div>
-
         </div>
-
         <footer class="container-fluid text-center">
             <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
         </footer>
@@ -401,11 +405,12 @@
                     <img src="images/about-us.JPG" alt="stock-image" class="subpage_image">
                 </div>
             </div>
+            <footer class="container-fluid text-center">
+                <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </footer>
         </div>
 
-        <footer class="container-fluid text-center">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </footer>
+
 
         <!-- Container (Budget Section) -->
         <div id="budget" class="container-fluid">
@@ -434,7 +439,7 @@
             <div class="text-center">
                 <h2><a href="donations.html">Donations</a></h2>
             </div>
-            <div class="row ">
+            <div class="row">
                 <div class="col-sm-4 col-xs-12">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
@@ -475,12 +480,10 @@
                     </div>
                 </div>
             </div>
+            <footer class="container-fluid text-center">
+                <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </footer>
         </div>
-
-        <footer class="container-fluid text-center">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </footer>
-
         <footer class="container-fluid">
             <div class="row">
                 <div class="text-left col-sm-6">
