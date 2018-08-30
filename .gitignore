@@ -1,1 +1,4 @@
-/documents/*
+*/.DS_Store
+test.txt
+.DS_Store
+documents/.DS_Store
