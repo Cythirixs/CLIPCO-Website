@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>CLIPCO - Donate FAQ</title>
     <meta charset="utf-8">
@@ -11,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="paralax.js"></script>
-    <style type="text/css">
+    <style>
         .jumbotron {
             color: red;
         }
@@ -39,10 +40,20 @@
             width: 50vw;
         }
 
-    		.noborder, .noborder tr, .noborder th, .noborder td { 
-	    		border: none; 
-		    	padding: 0 0 0 5rem;
-		    }
+        .noborder, .noborder tr, .noborder th, .noborder td { 
+            border: none; 
+            padding: 0 0 0 5rem;
+        }
+        
+        #prize-label-column {
+            width: 15%;
+        }
+        #prize-detail-column {
+            width: 85%;
+        }
+        #prize-info-table tr, #prize-info-table td{
+            padding: 0px;
+        }
 
     </style>
 </head>
@@ -97,7 +108,7 @@
             <p class="faq-answer">CLIP is the only public Mandarin immersion school program available in the Cupertino
                 Union School District. However, there are private Mandarin immersion school programs in the region.
                 Below are the 2018-2019 tuition fees for two of these private schools. The fees do not include
-                additional fees such as enrollment, registration, and material fees.
+                additional fees such as enrollment, registration, and material fees.</p>
                 <table class="noborder">
 				<tr>
 				<td>International School of the Peninsula (Palo Alto)</td><td>$29,400</td>
@@ -106,7 +117,6 @@
 				<td>Yew Chung International School (Mountain View)</td><td>$24,950</td>
 				</tr>
 				</table><br>
-            </p>
             <p><strong class="faq-question">What are the methods of donation?</strong></p>
             <p class="faq-answer">Donations can be made by check or credit/debit card.
                 <br>
@@ -152,7 +162,7 @@
             <p class="faq-answer">CLIPCO is a non-partisan and non-profit 501(3)(c) organization. Many companies provide
                 their employees the benefit of corporate matching for their favorite non-profit organizations. Since
                 each company does it differently, please contact your company’s HR or Benefits department to inquire
-                about how your donation may be maximized through a corporate matching program.
+                about how your donation may be maximized through a corporate matching program.</p>
                 <table class="noborder">
 					<tr><td>Organization Name</td><td>Cupertino Language Immersion Program Community Organization</td></tr>
 					<tr><td>EIN (Tax ID)</td><td>920193803</td></tr>
@@ -161,7 +171,6 @@
 					<tr><td>Address</td><td>P.O. Box 1344, Cupertino, CA 95015</td></tr>
 					<tr><td>Contact</td><td>Kevin Jung and Mirna Wu, Co-Treasurers (<a href="email.php?board=treasurer">treasurer@cusdclipco.com</a>)</td></tr>
 				</table><br>
-            </p>
             <p><strong class="faq-question">Is my donation tax-deductible?</strong></p>
             <p class="faq-answer">Donations to CLIPCO, a non-profit 501(c)(3) organization, is 100% tax-deductible. We
                 will be sending out the tax receipt to each donor by January 31, 
@@ -198,32 +207,45 @@
                 <a href="direct_give.html">direct give page</a> for more information!
             </p>
             <p><strong class="faq-question">Why do we need a contest to drive donations?</strong></p>
-            <p class="faq-answer">The Direct Give Contest is an annual event that encourages friendly competition to raise
-            	funds for CLIP. Since it started in 2010-2011, the participation rate has jumped from roughly 50% in the
-            	previous years to nearly 100%! The high participation rate allows us to keep the suggested donation amount low
-            	since the more families donate, the less each family needs to donate in order to keep the program afloat. The
-            	high participation rate is also a strong indication of the community’s commitment and support of the
-            	program.
-            </p>
+            <p class="faq-answer">The Direct Give Contest is an annual event that encourages friendly competition to
+                raise funds for CLIP. Since it started in
+                2010-2011, the participation rate has jumped from roughly 50% in the previous years to nearly 100%! The
+                high participation rate allows us to keep the suggested donation amount low since the more families
+                donate, the less each family needs to donate in order to keep the program afloat. The high participation
+                rate is also a strong indication of the community’s commitment and support of the program.</p>
+            
             <p><strong class="faq-question">What are the prizes this year?</strong></p>
-            <p class="faq-answer"><p class="faq-answer">As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:
-            </p>
-                <table class="noborder">
-				<tr>
-				<td>Individual Prize</td><td>TBA</td><td>Awarded to those students donating at least $425.</td>
-				</tr>
-				<tr>
-				<td>Class Prize</td><td>TBA</td><td>Awarded to the home room (Meyerholz)
-                or grade (Miller) that meets 90% participation rate and 90% target dollar amount.</td>
-				</tr>
-				<tr>
-				<td>Grand Prize</td><td>TBA</td><td>Awarded to the top 3 home room
-                (Meyerholz) or grade (Miller) with the highest percentage towards the target dollar amount.</td>
-				</tr>
-				</table>
-				<br>
-                <a href="direct_give.html">See Full Contest Details and Rules</a>
-            </p>
+            <p class="faq-answer" style="margin-bottom: 5px;">As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:</p>
+                <table id="prize-info-table" class="noborder">
+                    <col id="prize-label-column">
+                    <col id="prize-detail-column">
+                    <tr>
+                        <td>
+                            Individual Prize:
+                        </td>
+                        <td>
+                            A CLIP Pencil Case and 2 Pencils – awarded to those donating at least $225 per student.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Class Prize:
+                        </td>
+                        <td>
+                            Super cool T-shirt with Our Year of the Rooster Logo – awarded to the home room (Meyerholz) or grade (Miller) that meets 90% participation rate and 90% target dollar amount.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Grand Prize:
+                        </td>
+                        <td>
+                            A Sling Backpack with Our Year of the Rooster Logo -- awarded to the top 3 home room (Meyerholz) or grade (Miller) with the highest percentage towards the target dollar amount.
+                        </td>
+                    </tr>  
+                </table>
+            <a href="direct_give.html">See Full Contest Details and Rules</a>
+            
             <p><strong class="faq-question">When will the winners receive the prizes? </strong></p>
             <p class="faq-answer">Individual prizes will be handed out to students on specific dates (to be
                 announced) during lunch time at the GLC. For any given week, the donation must be received by Sunday in
