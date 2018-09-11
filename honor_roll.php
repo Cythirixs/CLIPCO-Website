@@ -75,7 +75,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span class="donation-level-title">Platinum</span><span class="donation-level-range">&nbsp;(dontation of $950 or more)</span></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span class="donation-level-title">Platinum</span><span class="donation-level-range">&nbsp;(Donation of $950 or more)</span></a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
@@ -110,7 +110,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(dontation of $651 - $949)</span></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(Donation of $651 - $949)</span></a>
                                 </h4>
                             </div>
                             <div id="collapse2" class="panel-collapse collapse">
@@ -144,7 +144,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(dontation of $426 - $650)</span></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(Donation of $426 - $650)</span></a>
                                 </h4>
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
@@ -178,7 +178,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(dontation of $425)</span></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(Donation of $425)</span></a>
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
