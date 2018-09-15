@@ -95,12 +95,12 @@
                 fill: black;
             }
 
-            body {
+            /*body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-            }
+            }*/
             
             #size-calc{
                 position: absolute;
@@ -135,23 +135,20 @@
             
         </style>
     </head>
-    <body id="top">
+    <body class="bg-grey" id="top">
         <div id="navbar-placeholder"></div>
         <script>
             $(function () {
                 $("#navbar-placeholder").load("subpage_navbar.html");
             });
         </script>
-        <div class="bg"></div>
-
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center bg-white">
             <h1>Budget</h1>
             <p>Information of CLIPCO's budget and spending</p>
         </div>
-
-        <div class="container-fluid bg-grey">
+        <div class="container-fluid ">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-xs-12">
                     <h2>The Budget</h2>
                     <h4>An overview of the <span id="year"></span> budget.</h4>
                     <script type="text/javascript">
@@ -173,259 +170,258 @@
                     <h4><span id="device-interface">Mouse over</span> the Pie chart below for more information about each section:</h4>
                     <p>Or, click <a href="current-budget">here</a> for a more detailed report.</p>
                 </div>
-            </div>
-            <div class="row text-center pie-chart">
-                <svg viewBox="0.0 0.0 150.0 150.0" class="chart" id="pie-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                </svg>
-                <!--This div is for calculating the width of text, which is used in the pie display script-->
-                <div id="size-calc" class="size-calc">foo</div>
-                <div id="size-calc-small" class="size-calc">bar</div>
-                
-                <!--Pie display script-->
-                <script>
-                    /*Slice Data*/
-                    var numSlices = 3;
-                    var names = ["Personnel","Materials","Other"];
-                    var ids = ["pers","mat","other"];
-                    var values = [73,12,15];
-                    var colors = ["#4a86e8","#de3811","#66aa00"];
-                    var info_text = [
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Personnel section of the budget pays for Instructional Assistants, Homework Club CLIP Art teachers, Special Program Coordinators, &amp; Teacher Adjunct Hours.",
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Materials section of the budget pays for Textbooks, Workbooks, Library books, Level Chinese Curriculum, &amp; CLIP Art materials.",
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Other section of the budget pays for Administration(5%), Professional development(5%), Copies(3%), Assessment(1%), Membership(&lt;1%), &amp; Technology costs(&lt;1%)."
-                        ];
-                    
-                    /*Fine tuning*/
-                    var text_scale = [0.9,0.7,0.75];
-                    var xoffset = [3,-2,0];
-                    var yoffset = [0,1,-6];
-                    var info_xoffset = [10,-25,-5];
-                    var info_yoffset = [30,0,-14];
-                    var info_height_offset = [-8,-4,-8.5];
-                    
-                    /*global parameters*/
-                    var radius = 25;
-                    var center = 75; 
-                    var line_spacing = 9; //for main titles
-                    var line_height = 4; //for info boxes
+                <div class="col-xs-12 pie-chart">
+                    <svg viewBox="0.0 0.0 150.0 150.0" class="chart" id="pie-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    </svg>
+                    <!--This div is for calculating the width of text, which is used in the pie display script-->
+                    <div id="size-calc" class="size-calc">foo</div>
+                    <div id="size-calc-small" class="size-calc">bar</div>
 
-                    /*html elements*/
-                    var svg = document.getElementById("pie-svg");
-                    var size_calc_div = document.getElementById("size-calc");
-                    var size_calc_small_div = document.getElementById("size-calc-small");
+                    <!--Pie display script-->
+                    <script>
+                        /*Slice Data*/
+                        var numSlices = 3;
+                        var names = ["Personnel","Materials","Other"];
+                        var ids = ["pers","mat","other"];
+                        var values = [73,12,15];
+                        var colors = ["#4a86e8","#de3811","#66aa00"];
+                        var personnel_text = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Personnel section of the budget pays for Instructional Assistants, Homework Club CLIP Art teachers, Special Program Coordinators, &amp; Teacher Adjunct Hours.";
+                        var materials_text = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Materials section of the budget pays for Textbooks, Workbooks, Library books, Level Chinese Curriculum, &amp; CLIP Art materials.";
+                        var other_text = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Other section of the budget pays for Administration(5%), Professional development(5%), Copies(3%), Assessment(1%), Membership(&lt;1%), &amp; Technology costs(&lt;1%).";
+                        var info_text = [personnel_text,materials_text,other_text];
 
-                    for(var i = 0; i < numSlices; i++){
-                        console.log("creating slice: " + names[i]);
-                        
-                        var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
-                        group.setAttribute("id",ids[i] + "-group");
-                        group.setAttribute("class","pie-group");
-                        group.setAttribute("onmouseover","showSlice(\'" + ids[i] + "\');");
-                        group.setAttribute("onmouseout","hideSlice(\'" + ids[i] + "\');");
-                        
-                        var slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                        slice.setAttribute("id",ids[i]+"-slice");
-                        slice.setAttribute("class","pie-slice");
-                        slice.style.stroke = colors[i];
-                        slice.setAttribute("r",radius);
-                        slice.setAttribute("cx",center);
-                        slice.setAttribute("cy",center);
-                        
-                        var dash = (values[i]/100.0) * 158;
-                        slice.style.strokeDasharray = dash + " 158";
-                        
-                        var offset = 0;
-                        for(var j = 0; j < i; j++){
-                            offset += values[j];
-                        }
-                        var stroke_offset = (offset/100.0) * -158;
-                        slice.style.strokeDashoffset = stroke_offset.toString();
-                        group.appendChild(slice);
-                        
-                        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                        text.setAttribute("id",ids[i] + "-label");
-                        text.setAttribute("class","pie-label");
-                        
-                        var rads = ((offset + (values[i]/2.0))/100.0) * 2 * Math.PI
-                        
-                        var x = (radius * Math.cos(rads)) + center - yoffset[i]; 
-                        //x and y  offset are switched and signs bc of 90 degree rotatios
-                        var y = (radius * Math.sin(rads)) + center + xoffset[i];
-                                                
-                        var name = names[i].split(" ");
+                        /*Fine tuning*/
+                        var text_scale = [0.9,0.7,0.75];
+                        var xoffset = [3,-2,0];
+                        var yoffset = [0,1,-6];
+                        var info_xoffset = [10,-25,-5];
+                        var info_yoffset = [30,0,-14];
+                        var info_height_offset = [-8,-4,-8.5];
 
-                        size_calc_div.innerHTML = name.split(",")[0];
-                        var text_size = size_calc_div.clientWidth + 1;
-                        
-                        text.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
-                        
-                        text.setAttribute("y",(y - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
-                        
-                        var transform = "rotate(90 " + x + "," + y + ")" + ",scale(" + text_scale[i] + "," + text_scale[i] + ")";
-                        
-                        /*transform = "rotate(90 " + x + "," + y + ")";*/
-                        
-                        /*console.log(transform);*/ 
-                        
-                        text.setAttribute("transform",transform);
- 
-                        if(name.split(",").length > 1){
-                            text.appendChild(document.createTextNode(name.split(",")[0]));
-                            for(var j = 1; j < name.split(",").length; j++){
-                                
+                        /*global parameters*/
+                        var radius = 25;
+                        var center = 75; 
+                        var line_spacing = 9; //for main titles
+                        var line_height = 4; //for info boxes
 
-                                //create new tspan element and set attributes
-                                var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-                                tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
-                                tspan.setAttribute("y",(y + (j*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+                        /*html elements*/
+                        var svg = document.getElementById("pie-svg");
+                        var size_calc_div = document.getElementById("size-calc");
+                        var size_calc_small_div = document.getElementById("size-calc-small");
 
-                                //add the text to the tspan element
-                                tspan.innerHTML = name.split(",")[j];
-                                if(j == (name.split(",").length-1)){tspan.innerHTML += ":"}
+                        for(var i = 0; i < numSlices; i++){
+                            console.log("creating slice: " + names[i]);
 
-                                //append to text element
-                                text.appendChild(tspan);
-                            } 
-                        } else {
-                            text.appendChild(document.createTextNode(name.split(",")[0] + ":"));
-                        }
-                        
-                        //now add on the percentage label
-                        
-                        //get text width
-                        size_calc_div.innerHTML = values[i] + "%";
-                        text_size = size_calc_div.clientWidth + 1;
-                        
-                        //create new tspan element
-                        var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-                        tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
-                        tspan.setAttribute("y",(y + (name.split(",").length*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
-                        
-                        //add the text in
-                        tspan.innerHTML = size_calc_div.innerHTML;
-                        
-                        //append to text element
-                        text.appendChild(tspan);
+                            var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                            group.setAttribute("id",ids[i] + "-group");
+                            group.setAttribute("class","pie-group");
+                            group.setAttribute("onmouseover","showSlice(\'" + ids[i] + "\');");
+                            group.setAttribute("onmouseout","hideSlice(\'" + ids[i] + "\');");
 
-                        //append the text element to the group
-                        group.appendChild(text);
+                            var slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                            slice.setAttribute("id",ids[i]+"-slice");
+                            slice.setAttribute("class","pie-slice");
+                            slice.style.stroke = colors[i];
+                            slice.setAttribute("r",radius);
+                            slice.setAttribute("cx",center);
+                            slice.setAttribute("cy",center);
 
-                        //now for the mouse over info box
+                            var dash = (values[i]/100.0) * 158;
+                            slice.style.strokeDasharray = dash + " 158";
 
-                        //create the info group
-                        var info_group = document.createElementNS("http://www.w3.org/2000/svg", "g");
-                        //set attributes
-                        info_group.setAttribute("id",ids[i]+"-box");
-                        info_group.setAttribute("class","pie-info-box");
-
-                        //make and format the text inside
-                        size_calc_small_div.innerHTML = info_text[i];
-
-                        size_calc_small_div.style.width = "var(--info-box-width)";
-
-                        var width = size_calc_small_div.clientWidth;
-                        var height = size_calc_small_div.clientHeight;
-
-                        var transx = x + height/2 - info_yoffset[i];
-                        var transy = y - width/2 + info_xoffset[i];
-
-                        transform = "translate(" + transx + "," + transy + "),rotate(90)";
-
-                        info_group.setAttribute("transform",transform);
-
-                        //create rect
-                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                        //set attributes
-                        rect.setAttribute("width",width);
-                        rect.setAttribute("height",height + info_height_offset[i]);
-                        var corner_radius = 3;
-                        rect.setAttribute("rx",corner_radius);
-                        rect.setAttribute("ry",corner_radius);
-
-                        info_group.appendChild(rect);
-
-
-                        size_calc_small_div.style.width = "auto";
-
-                        var text_sep = info_text[i].split(" ");
-                        var line = "";
-                        var j = 0;
-                        var line_count = 0;
-                        text_size = 0;
-                        var text_y_offset = 5;
-                        var text_x_offset = 1.5;
-                        while (j < text_sep.length) {
-
-                            var temp_line = line + text_sep[j] + " ";
-                            size_calc_small_div.innerHTML = temp_line;
-                            text_size = size_calc_small_div.clientWidth;
-
-                            if((text_size + 2*text_x_offset) < width){
-                                line += text_sep[j] + " ";
-                                j++;  
-
-                            } else {
-                                //create the new text node
-                                text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                //set attributes
-                                text.setAttribute("class","body");
-                                text.setAttribute("x",text_x_offset);
-                                text.setAttribute("y",text_y_offset + (line_count*line_height));
-                                //add text
-                                text.innerHTML = line;
-                                //append text to info_group
-                                info_group.appendChild(text);
-                                //clear line
-                                line = "";
-                                //increment line_count;
-                                line_count++;
+                            var offset = 0;
+                            for(var j = 0; j < i; j++){
+                                offset += values[j];
                             }
+                            var stroke_offset = (offset/100.0) * -158;
+                            slice.style.strokeDashoffset = stroke_offset.toString();
+                            group.appendChild(slice);
+
+                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            text.setAttribute("id",ids[i] + "-label");
+                            text.setAttribute("class","pie-label");
+
+                            var rads = ((offset + (values[i]/2.0))/100.0) * 2 * Math.PI
+
+                            var x = (radius * Math.cos(rads)) + center - yoffset[i]; 
+                            //x and y  offset are switched and signs bc of 90 degree rotatios
+                            var y = (radius * Math.sin(rads)) + center + xoffset[i];
+
+                            var name = names[i].split(" ");
+
+                            size_calc_div.innerHTML = name.split(",")[0];
+                            var text_size = size_calc_div.clientWidth + 1;
+
+                            text.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+
+                            text.setAttribute("y",(y - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+
+                            var transform = "rotate(90 " + x + "," + y + ")" + ",scale(" + text_scale[i] + "," + text_scale[i] + ")";
+
+                            /*transform = "rotate(90 " + x + "," + y + ")";*/
+
+                            /*console.log(transform);*/ 
+
+                            text.setAttribute("transform",transform);
+
+                            if(name.split(",").length > 1){
+                                text.appendChild(document.createTextNode(name.split(",")[0]));
+                                for(var j = 1; j < name.split(",").length; j++){
+
+
+                                    //create new tspan element and set attributes
+                                    var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+                                    tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+                                    tspan.setAttribute("y",(y + (j*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+
+                                    //add the text to the tspan element
+                                    tspan.innerHTML = name.split(",")[j];
+                                    if(j == (name.split(",").length-1)){tspan.innerHTML += ":"}
+
+                                    //append to text element
+                                    text.appendChild(tspan);
+                                } 
+                            } else {
+                                text.appendChild(document.createTextNode(name.split(",")[0] + ":"));
+                            }
+
+                            //now add on the percentage label
+
+                            //get text width
+                            size_calc_div.innerHTML = values[i] + "%";
+                            text_size = size_calc_div.clientWidth + 1;
+
+                            //create new tspan element
+                            var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+                            tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+                            tspan.setAttribute("y",(y + (name.split(",").length*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+
+                            //add the text in
+                            tspan.innerHTML = size_calc_div.innerHTML;
+
+                            //append to text element
+                            text.appendChild(tspan);
+
+                            //append the text element to the group
+                            group.appendChild(text);
+
+                            //now for the mouse over info box
+
+                            //create the info group
+                            var info_group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                            //set attributes
+                            info_group.setAttribute("id",ids[i]+"-box");
+                            info_group.setAttribute("class","pie-info-box");
+
+                            //make and format the text inside
+                            size_calc_small_div.innerHTML = info_text[i];
+
+                            size_calc_small_div.style.width = "var(--info-box-width)";
+
+                            var width = size_calc_small_div.clientWidth;
+                            var height = size_calc_small_div.clientHeight;
+
+                            var transx = x + height/2 - info_yoffset[i];
+                            var transy = y - width/2 + info_xoffset[i];
+
+                            transform = "translate(" + transx + "," + transy + "),rotate(90)";
+
+                            info_group.setAttribute("transform",transform);
+
+                            //create rect
+                            var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                            //set attributes
+                            rect.setAttribute("width",width);
+                            rect.setAttribute("height",height + info_height_offset[i]);
+                            var corner_radius = 3;
+                            rect.setAttribute("rx",corner_radius);
+                            rect.setAttribute("ry",corner_radius);
+
+                            info_group.appendChild(rect);
+
+
+                            size_calc_small_div.style.width = "auto";
+
+                            var text_sep = info_text[i].split(" ");
+                            var line = "";
+                            var j = 0;
+                            var line_count = 0;
+                            text_size = 0;
+                            var text_y_offset = 5;
+                            var text_x_offset = 1.5;
+                            while (j < text_sep.length) {
+
+                                var temp_line = line + text_sep[j] + " ";
+                                size_calc_small_div.innerHTML = temp_line;
+                                text_size = size_calc_small_div.clientWidth;
+
+                                if((text_size + 2*text_x_offset) < width){
+                                    line += text_sep[j] + " ";
+                                    j++;  
+
+                                } else {
+                                    //create the new text node
+                                    text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    //set attributes
+                                    text.setAttribute("class","body");
+                                    text.setAttribute("x",text_x_offset);
+                                    text.setAttribute("y",text_y_offset + (line_count*line_height));
+                                    //add text
+                                    text.innerHTML = line;
+                                    //append text to info_group
+                                    info_group.appendChild(text);
+                                    //clear line
+                                    line = "";
+                                    //increment line_count;
+                                    line_count++;
+                                }
+                            }
+
+                            //create the new text node
+                            text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            //set attributes
+                            text.setAttribute("class","body");
+                            text.setAttribute("x",text_x_offset);
+                            text.setAttribute("y",text_y_offset + (line_count*line_height));
+                            //add text
+                            text.innerHTML = line;
+                            //append text to info_group
+                            info_group.appendChild(text);
+                            //clear line
+                            line = "";
+
+
+
+                            group.appendChild(info_group);
+
+                            svg.appendChild(group);
+
+
                         }
 
-                        //create the new text node
-                        text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                        //set attributes
-                        text.setAttribute("class","body");
-                        text.setAttribute("x",text_x_offset);
-                        text.setAttribute("y",text_y_offset + (line_count*line_height));
-                        //add text
-                        text.innerHTML = line;
-                        //append text to info_group
-                        info_group.appendChild(text);
-                        //clear line
-                        line = "";
+                        size_calc_div.innerHTML = "";
+                    </script>
 
+                    <!-- svg show/hide script -->
+                    <script type="text/javascript">
+                        function showSlice(slice){
+                            /*document.getElementById(slice+'-outline').classList.add('show');*/
+                            document.getElementById(slice+'-box').classList.add('show');
+                        }
+                        function hideSlice(slice){
+                            /*document.getElementById(slice+'-outline').classList.remove('show');*/
+                            document.getElementById(slice+'-box').classList.remove('show');
 
+                        }
 
-                        group.appendChild(info_group);
-                        
-                        svg.appendChild(group);
+                        window.addEventListener('touchstart', function() {
+                            document.getElementById("device-interface").innerHTML = "Tap on";
+                            // we only need to know once that a human touched the screen, so we can stop listening now
+                            window.removeEventListener('touchstart', onFirstTouch, false);
+                        }, false);
 
-                       
-                    }
-                    
-                    size_calc_div.innerHTML = "";
-                </script>
-                
-                <!-- svg show/hide script -->
-                <script type="text/javascript">
-                    function showSlice(slice){
-                        /*document.getElementById(slice+'-outline').classList.add('show');*/
-                        document.getElementById(slice+'-box').classList.add('show');
-                    }
-                    function hideSlice(slice){
-                        /*document.getElementById(slice+'-outline').classList.remove('show');*/
-                        document.getElementById(slice+'-box').classList.remove('show');
-
-                    }
-
-                    window.addEventListener('touchstart', function() {
-                        document.getElementById("device-interface").innerHTML = "Tap on";
-                        // we only need to know once that a human touched the screen, so we can stop listening now
-                        window.removeEventListener('touchstart', onFirstTouch, false);
-                    }, false);
-
-                </script>
+                    </script>
+                </div>
             </div>
             <footer class="container-fluid text-center bg-grey">
                 <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
