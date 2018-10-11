@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style type="text/css">
+    <style>
         #donation-table td {
             border: 1px solid rgba(0, 0, 0, 0.5);
             padding: 5px;
@@ -34,6 +34,12 @@
 
         table, th, td {
             padding: 7px;
+        }
+        
+        #form {
+            border: 0px;
+            width: 100%;
+            height: 100vh;
         }
 
 
@@ -94,7 +100,7 @@
                 <h4>To pay by check, download and fill out the <a href="pledgeform.html">pledge form</a>.</h4>
                 <br>
                 <div class="donation-table-div">
-                    <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post" name="_xclick" target="paypal">
+                    <!--<form action="https://www.paypal.com/us/cgi-bin/webscr" method="post" name="_xclick" target="paypal">
                         <input name="cmd" type="hidden" value="_cart" />
                         <input name="business" type="hidden" value="clipco@cusdclipco.org" />
                         <input name="currency_code" type="hidden" value="USD" />
@@ -183,7 +189,8 @@
                         <br>
                         <input alt="Make payments with PayPal - it's fast, free and secure!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" type="image" /> <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                         <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" type="image" /><span></span><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif?t=1409295006165?t=1409295446572?t=1409295522138?t=1409295578960?t=1409295608569?t=1409295666444?t=1409295757104?t=1409295794127?t=1409295818115?t=1409295843219?t=1409295868252?t=1409295904311?t=1409295919847?t=1409295941216?t=1409295986447?t=1409296000413?t=1409296020294?t=1409296045416?t=1409296137912?t=1409296171312?t=1409296187461?t=1409296263131" alt="" width="1" height="1" border="0" />
-                    </form>
+                    </form>-->
+                    <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSf_A8vW7z-tze351l7U47s4Li6gXeCiKG2cL1rFf2QS4nFDsQ/viewform"></iframe>
                 </div>
                 <br>
             </div>
