@@ -38,17 +38,22 @@
         }
         
         #form {
+            padding: 0 25px;
             border: 0px;
             width: inherit;
             height: 2250px;
-            overflow: hidden;
+            overflow: visible;
+            scroll-behavior: auto;
         }
         
         .donation-table-div{
             width: 80vw;
         }
 
-        @media screen and (max-width:320px){
+        @media screen and (max-width:360px){
+            #form{
+                padding: 0;
+            }
             .jumbotron{ 
                 height: 290px;
             }
