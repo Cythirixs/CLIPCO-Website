@@ -10,7 +10,7 @@
         <link href="css.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <style type="text/css">
+        <style>
             table, th, td {
                 border: 1px solid rgb(150, 150, 150);
                 border-collapse: collapse;
@@ -37,8 +37,8 @@
                 margin-bottom: 5px;
             }
 
-            @media screen and (max-width:736px){
-                 .col-sm-12{
+            @media screen and (max-width:768px){
+                .col-sm-12{
                     margin: 5px 0px; 
                 } 
 
@@ -46,6 +46,10 @@
                     padding: 0px 0px 5px 0px;
                     margin: 0px;
                 }  
+                
+                table {
+                    margin: auto;
+                }
             }
         </style>
     </head>
@@ -54,24 +58,11 @@
         <script>
             $(function () {
                 $("#navbar-placeholder").load("subpage_navbar.html");
-            });
-        </script>
-        <script type="text/javascript">
-            $(function() {
                 $("#board-directors").load("board_directors.html");
-            });
-        </script>
-        <script type="text/javascript">
-            $(function() {
                 $("#program-directors").load("program_directors.html");
-            });
-        </script>
-        <script type="text/javascript">
-            $(function() {
                 $("#accordion").load("meeting_minutes_agendas.html");
             });
         </script>
-
         <div class="jumbotron text-center">
             <h1>About Us</h1>
         </div>
@@ -88,11 +79,12 @@
                     <div><button class="btn btn-default btn-lg" data-target="#contacts" data-toggle="collapse" type="button">Board of Directors</button></div>
                     <br>
                     <div class="collapse" id="contacts">
-                         <p>There are still open positions available. Please contact us to join our team!</p>
+                        <p>There are still open positions available. Please contact us to join our team!</p>
                         <div id="board-directors"></div>
+                        <br>
                     </div>
                     <div><button class="btn btn-default btn-lg" data-target="#morecontacts" data-toggle="collapse" type="button">Program Directors</button></div>
-
+                    
                     <div class="collapse" id="morecontacts">
                         <p>There are still open positions available. Please contact us to join our team!</p>
                         <div id="program-directors"></div>
@@ -102,14 +94,13 @@
                     <p>The Board of Directors meet on the third Thursday of each month at 7pm in the Meyerholz Flex Lab</p>
 
                     <div class="panel-group" id="accordion" data-children=".panel"></div>
+                    <br>
 
-                    
-                    <br>
                     <a class="btn btn-default btn-lg" href="faq.html" role="button">FAQ</a>
-                    <br>
+                    <br><br>
                 </div>
-            <div class="col-md-4 col-sm-12" id="stock-image"><img alt="stock-image" class="subpage_image" src="images/about-us.JPG"></div>
-        </div>
+                <div class="col-md-4 col-sm-12" id="stock-image"><img alt="stock-image" class="subpage_image" src="images/about-us.JPG"></div>
+            </div>
             <footer class="container-fluid text-center bg-grey">
                 <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
             </footer>
