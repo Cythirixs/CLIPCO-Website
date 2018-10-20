@@ -121,10 +121,7 @@
                             </td>
                             <td>
                                 <select name="position">
-                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "kindergarten"){echo "selected";} ?> value="kindergarten">Kindergarten grade rep</option>
-                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "5th grade"){echo "selected";} ?> value="5th grade">5th grade rep</option>
                                     <option <?php if(isset($_GET["position"]) && $_GET["position"] == "6th grade"){echo "selected";} ?> value="6th grade">6th grade rep</option>
-                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "8th grade"){echo "selected";} ?> value="8th grade">8th grade rep</option>
                                     <option <?php if(isset($_GET["position"]) && $_GET["position"] == "Community events"){echo "selected";} ?> value="Community events">Community Events</option>
                                     <option <?php if(isset($_GET["position"]) && $_GET["position"] == "CUSD and CAC outreach"){echo "selected";} ?> value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
                                     <option <?php if(isset($_GET["position"]) && $_GET["position"] == "Direct give campaign"){echo "selected";} ?> value="Direct give campaign">Direct Give Campaign</option>
