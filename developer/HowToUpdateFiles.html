@@ -17,6 +17,9 @@
                 width: 75%;
                 text-align: center;
             }
+            #special_note_section{
+                text-align: left;
+            }
         </style>
     </head>
     <body id="top" class="bg-grey" onload="loadImage(0)">
@@ -43,33 +46,41 @@
                             <ol>
                                 <li>
                                     Log in through cpanel at <a href="https://www.cusdclipco.org/cpanel">cusdclipco.org/cpanel</a><br>
-                                    <img src="../images/tutorial/cpanel_login.png" class="subpage_image">
+                                    <img src="../images/tutorial/cpanel_login.png" class="subpage_image" alt="cpanel_login.png">
                                 </li>
                                 <li>
                                     From the dashboard, select <strong>File Manager</strong><br>
-                                    <img src="../images/tutorial/cpanel_menu.png" class="subpage_image">
+                                    <img src="../images/tutorial/cpanel_menu.png" class="subpage_image" alt="cpanel_menu.png">
                                 </li>
                                 <li>
                                     The file manager should open up to public_html. Navigate to the directory with the file you wish to update. then Select <strong>Upload</strong>.<br>
-                                    <img src="../images/tutorial/cpanel_files.png" class="subpage_image">
+                                    <img src="../images/tutorial/cpanel_files.png" class="subpage_image" alt="cpanel_files.png">
                                 </li>
                                 <li>
                                     Drag in or select your file into the upload dialogue window.<br>
-                                    <img src="../images/tutorial/upload_screen.png" class="subpage_image"><br>
+                                    <img src="../images/tutorial/upload_screen.png" class="subpage_image" alt="upload_screen.png"><br>
                                     If it asks you if you want to overwite existing files, just click <strong>Yes</strong>. <br>
-                                    <img src="../images/tutorial/upload_overwrite.png" class="subpage_image">
+                                    <img src="../images/tutorial/upload_overwrite.png" class="subpage_image" alt="upload_overwrite.png">
                                 </li>
                             </ol>
                             <p>And that's it!</p>
+                            <br>
                         </li>
-                        <br>
                         <li>
                             <h4>Using Cyberduck</h4>
-                            <p class="indent"> If you choose to use Cyberduck to update the website, then we first need to set up Cyberduck to connect to the website. You can find instructions on how to do that through Cpanel <a href="https://www.cusdclipco.org:2083/cpsess3751557023/frontend/paper_lantern/ftp/instructions/cyberduck.html">here</a>.</p>
+                            <p class="indent"> If you choose to use Cyberduck to update the website, then you first need to set up Cyberduck to connect to the website. You can find instructions on how to do that through Cpanel <a href="https://www.cusdclipco.org:2083/cpsess3751557023/frontend/paper_lantern/ftp/instructions/cyberduck.html">here</a>.</p>
                             <p class="indent">Once you have cyberduck installed and set up then you navigate to the appropriate directory (usually public_html) and drag your files in from your computer.</p>
                         </li>
                     </ul>
-                    <h4>If you followed all of the above steps, then your file should be uploaded! navigate to the file you changed on the site to check if it's updated. If your changes don't appear immediately, refresh the page a couple of times. If that still doesn't work then you may need to <a href="https://support.google.com/accounts/answer/32050?co=GENIE.Platform%3DDesktop&hl=en">empty your cache</a>.</h4>
+                    <h4>If you followed all of the above steps, then your file should be uploaded! navigate to the file you changed on the site to check if it's updated. If your changes don't appear immediately, refresh the page a couple of times. If that still doesn't work then you may need to <a href="https://support.google.com/accounts/answer/32050">empty your cache</a>.</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-white" id="special_note_section">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Special note for updating the homepage (Website.html): </h3>
+                    <h4 class="indent">Since the homepage is dynamically loaded to include resources from the blog, it can't be updated by replacing the old file with the above methods. Instead, you have to manually copy the lines you changed into the "Website.php" file located in the php folder. After you make your changes there, it may take up to 24 hours for the changes to appear on the homepage, as it is only updated once a day.</h4>
                 </div>
             </div>
         </div>
