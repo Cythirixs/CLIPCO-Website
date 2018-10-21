@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CLIPCO - Updates</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* some css can go here */
+            .subpage_image {
+                width: 75%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body id="top" class="bg-grey" onload="loadImage(0)">
+        <div id="navbar-placeholder"></div>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("../subpage_navbar.html");
+            });
+        </script>
+
+        <div class="jumbotron text-center bg-white">
+            <h1>Updates</h1>
+            <p>How to update pages to the site</p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <h2>How to update pages</h2>
+                    <h4><strong>Reminder:</strong> make sure changes have been approved through the Github process, and merged into master before pushing to the site. <br> There are two ways to update pages on the site. </h4>
+                    <ul>
+                        <li>
+                            <h4>Through Cpanel</h4>
+                            <ol>
+                                <li>
+                                    Log in through cpanel at <a href="https://www.cusdclipco.org/cpanel">cusdclipco.org/cpanel</a><br>
+                                    <img src="../images/tutorial/cpanel_login.png" class="subpage_image">
+                                </li>
+                                <li>
+                                    From the dashboard, select <strong>File Manager</strong><br>
+                                    <img src="../images/tutorial/cpanel_menu.png" class="subpage_image">
+                                </li>
+                                <li>
+                                    The file manager should open up to public_html. Navigate to the directory with the file you wish to update. then Select <strong>Upload</strong>.<br>
+                                    <img src="../images/tutorial/cpanel_files.png" class="subpage_image">
+                                </li>
+                                <li>
+                                    Drag in or select your file into the upload dialogue window.<br>
+                                    <img src="../images/tutorial/upload_screen.png" class="subpage_image"><br>
+                                    If it asks you if you want to overwite existing files, just click <strong>Yes</strong>. <br>
+                                    <img src="../images/tutorial/upload_overwrite.png" class="subpage_image">
+                                </li>
+                            </ol>
+                            <p>And that's it!</p>
+                        </li>
+                        <br>
+                        <li>
+                            <h4>Using Cyberduck</h4>
+                            <p class="indent"> If you choose to use Cyberduck to update the website, then we first need to set up Cyberduck to connect to the website. You can find instructions on how to do that through Cpanel <a href="https://www.cusdclipco.org:2083/cpsess3751557023/frontend/paper_lantern/ftp/instructions/cyberduck.html">here</a>.</p>
+                            <p class="indent">Once you have cyberduck installed and set up then you navigate to the appropriate directory (usually public_html) and drag your files in from your computer.</p>
+                        </li>
+                    </ul>
+                    <h4>If you followed all of the above steps, then your file should be uploaded! navigate to the file you changed on the site to check if it's updated. If your changes don't appear immediately, refresh the page a couple of times. If that still doesn't work then you may need to <a href="https://support.google.com/accounts/answer/32050?co=GENIE.Platform%3DDesktop&hl=en">empty your cache</a>.</h4>
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script async src="../js.js"></script>
+    </body>
+</html>
