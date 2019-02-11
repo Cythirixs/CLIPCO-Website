@@ -17,6 +17,10 @@ body {
     
 }
 
+hr {
+	max-width: 1440px;
+}
+
 footer {
     padding-top: 5px;
 }
