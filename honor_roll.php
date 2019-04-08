@@ -74,7 +74,7 @@
             <h4>The CLIPCO Board would like to thank the following donors for their support in the continuing success of CLIP.</h4>
             <div class="row">
                 <div class="col-sm-8 col-xs-12">
-                    <h2>K-6 Families</h2>
+                    <h2>K-5 Families</h2>
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -86,7 +86,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade");
+                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_platinum_names.txt";
@@ -121,7 +121,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade");
+                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_gold_names.txt";
@@ -155,7 +155,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade");
+                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_silver_names.txt";
@@ -189,7 +189,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade");
+                                        $grades = array("Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_bronze_names.txt";
@@ -214,7 +214,7 @@
                             </div>
                         </div>
                     </div>
-                    <h2>7-8 Families</h2>
+                    <h2>6-8 Families</h2>
                     <div class="panel-group" id="accordion2">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -228,7 +228,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("7th grade", "8th grade");
+                                        $grades = array("6th grade", "7th grade", "8th grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_platinum_names.txt";
@@ -262,7 +262,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("7th grade", "8th grade");
+                                        $grades = array("6th grade", "7th grade", "8th grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_gold_names.txt";
@@ -296,7 +296,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("7th grade", "8th grade");
+                                        $grades = array("6th grade", "7th grade", "8th grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_silver_names.txt";
@@ -330,7 +330,7 @@
                                 <div class="panel-body">
                                     <?php
                                         $empty = true;
-                                        $grades = array("7th grade", "8th grade");
+                                        $grades = array("6th grade", "7th grade", "8th grade");
                                         $length = count($grades);
                                         for ($i=0; $i < $length; $i++) { 
                                             $filename = dirname(__FILE__) . "/documents/honor roll names/" . strtolower($grades[$i]) . "_bronze_names.txt";
